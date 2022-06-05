@@ -10,7 +10,7 @@ int Primo(llu n){
 
 int main(){
     llu val;
-    scanf("%lld", &val);
-    printf("%d\n", Primo(val));
+    while(scanf("%lld", &val) != EOF)
+        printf("%d\n", Primo(val));
     return 0;
 }

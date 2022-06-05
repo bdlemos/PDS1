@@ -9,7 +9,7 @@ llu Primo(llu n){
 }
 
 llu soma_primos(llu n){
-    llu i = 0, num = 2, soma = 0;
+    llu num = 2, soma = 0;
     while(n){
         if (Primo(num)){
             soma += num;
@@ -21,7 +21,7 @@ llu soma_primos(llu n){
 }
 int main(){
     llu val;
-    scanf("%lld", &val);
-    printf("%lld\n", soma_primos(val));
+    while(scanf("%lld", &val) != EOF)
+        printf("%lld\n", soma_primos(val));
     return 0;
 }
