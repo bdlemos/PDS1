@@ -7,7 +7,7 @@ int carater(char *c, char letra){
         return 0;
     if(*c == letra)
         soma = 1 + carater(c + 1, letra);
-    if(*c != letra)
+    else
         soma = 0 + carater(c + 1, letra);
     return soma;
 }
