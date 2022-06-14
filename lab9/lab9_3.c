@@ -13,13 +13,8 @@ void classificar(Iris nao_identificada, Iris registros_identificados[], int n){
     float menor;
     int pos;
     for (int i = 0; i < n; i++){
-        for (int i = 0; i < 4; i++)
-            euclidian[i] += pow(*(&nao_identificada.comS + i) - *(&registros_identificados[i].comS + i), 2);
-        
-        //euclidian[i] += pow(*(&nao_identificada.comS + i) - *(&registros_identificados[i].comS + i), 2);
-        /*euclidian[i] += pow(nao_identificada.larS - registros_identificados[i].larS, 2);
-        euclidian[i] += pow(nao_identificada.comP - registros_identificados[i].comP, 2);
-        euclidian[i] += pow(nao_identificada.larP - registros_identificados[i].larP, 2);*/
+        for (int j = 0; j < 4; j++)
+            euclidian[i] += pow(*(&nao_identificada.comS + j) - *(&registros_identificados[i].comS + j), 2);
         euclidian[i] = sqrt(euclidian[i]);
     }
     menor = euclidian[0];
