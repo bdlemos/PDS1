@@ -1,13 +1,21 @@
 #include <stdio.h>
 #include <string.h>
 
-int remove_caracter(char *c, char letra){
-    int soma = 0;
-    if(*c == '\0')
-        return 0;
-    if(*c == letra)
-        *c = '0';
-    return remove_caracter(c + 1, letra);
+void remove_char(char *ptr1, char *ptr2, char chr)
+{
+  if (!*ptr2)
+  {
+    *ptr1 = 0;
+  }
+  else if (*ptr2 == chr)
+  {
+    remove_char(ptr1, ptr2 + 1, chr);
+  }
+  else
+  {
+    *ptr1 = *ptr2;
+    remove_char(ptr1 + 1, ptr2 + 1, chr);
+  }
 }
 
 int main(){
@@ -16,9 +24,7 @@ int main(){
     scanf("%s", str);
     getchar();
     scanf("%c", &letra);
-    remove_caracter(str, letra);
-    for (int i = 0; i < strlen(str); i++)
-        if(str[i] != '0')
-            printf("%c", str[i]);
+    remove_char(str,str , letra);
+    printf("%s", str);
     return 0;
 }
