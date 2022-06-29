@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int search(int *m, int i,int size, int val){
+int search(int *m, int i, int val){
     if (m[i] == val)
         return 1;
-    if (i == size - 1)
+    if (i == 0)
         return 0;
-    return search(m, i + 1, size, val);
+    return search(m, i - 1, val);
 }
 
 int main(){
@@ -24,7 +24,7 @@ int main(){
         int val, x, y;
         if (c == 'p'){
             scanf("%d", &val);
-            printf("%d\n", search(m, 0, size, val));
+            printf("%d\n", search(m, size - 1, val));
         }
         else if (c == 'e'){
             scanf("%d %d %d", &x, &y, &val);
